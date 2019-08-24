@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_medium_2">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/blur_img"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout_input"
+            android:layout_margin="@dimen/margin_medium_2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:textSize="@dimen/text_regular_3x"
+                android:textStyle="bold"
+                android:id="@+id/lbl_title"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:textColor="@color/color_dark"
+                android:text="@string/lbl_explore"/>
+
+            <android.support.design.chip.Chip
+                android:id="@+id/filter_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:text="@string/chip_filters"
+                android:textSize="@dimen/text_regular"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:padding="@dimen/margin_small"
+                android:textStyle="bold"
+                android:textColor="@color/color_dark"
+                android:layout_alignParentRight="true"
+                android:theme="@style/MaterialLightTheme"
+                app:iconStartPadding="@dimen/margin_small"
+                app:chipIcon="@drawable/filter_chip"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_location"
+                android:layout_below="@id/filter_chip"
+                android:layout_marginTop="@dimen/margin_medium_3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lbl_location_search"
+                    android:text="@string/lbl_location"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_shade"
+                    android:layout_marginLeft="@dimen/margin_medium_3"
+                    android:layout_marginTop="@dimen/margin_medium"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/side_button_height"
+                    android:layout_below="@+id/lbl_location_search"
+                    android:layout_marginTop="@dimen/margin_small">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/side_button_height"
+                        android:id="@+id/text_location"
+                        android:text="@string/selected_dhaka"
+                        android:paddingLeft="@dimen/margin_medium_2"
+                        android:background="@drawable/edit_text_design"/>
+
+                    <ImageView
+                        android:layout_width="@dimen/side_ic"
+                        android:layout_height="@dimen/side_ic"
+                        android:src="@drawable/img_nav_png"
+                        android:layout_marginRight="@dimen/margin_medium_2"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_check_time"
+                android:layout_below="@+id/layout_location"
+                android:weightSum="2"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/margin_small">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lbl_check_in_time"
+                        android:text="@string/lbl_check_in"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_shade"
+                        android:layout_marginLeft="@dimen/margin_medium_3"
+                        android:layout_marginTop="@dimen/margin_medium"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/side_button_height"
+                        android:id="@+id/text_check_in"
+                        android:textSize="@dimen/text_regular"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:focusable="false"
+                        android:paddingLeft="@dimen/margin_medium_2"
+                        android:background="@drawable/edit_text_design"
+                        android:layout_below="@+id/lbl_check_in_time"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/margin_small">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lbl_check_out_time"
+                        android:text="@string/lbl_check_out"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_shade"
+                        android:layout_marginLeft="@dimen/margin_medium_3"
+                        android:layout_marginTop="@dimen/margin_medium"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/side_button_height"
+                        android:id="@+id/text_check_out"
+                        android:textSize="@dimen/text_regular"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:focusable="false"
+                        android:paddingLeft="@dimen/margin_medium_2"
+                        android:background="@drawable/edit_text_design"
+                        android:layout_below="@+id/lbl_check_out_time"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_check_person"
+                android:layout_below="@+id/layout_check_time"
+                android:weightSum="2"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/margin_small">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lbl_count"
+                        android:text="@string/lbl_count"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_shade"
+                        android:layout_marginLeft="@dimen/margin_medium_3"
+                        android:layout_marginTop="@dimen/margin_medium"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/side_button_height"
+                        android:id="@+id/text_person"
+                        android:textSize="@dimen/text_regular"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="@string/lbl_2_adults"
+                        android:focusable="false"
+                        android:paddingLeft="@dimen/margin_medium_2"
+                        android:background="@drawable/edit_text_design"
+                        android:layout_below="@+id/lbl_count"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/margin_small">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lbl_room_count"
+                        android:text="Rooms"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_shade"
+                        android:layout_marginLeft="@dimen/margin_medium_3"
+                        android:layout_marginTop="@dimen/margin_medium"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/side_button_height"
+                        android:id="@+id/text_room_count"
+                        android:text="@string/lbl_03"
+                        android:focusable="false"
+                        android:paddingLeft="@dimen/margin_medium_2"
+                        android:textSize="@dimen/text_regular"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:background="@drawable/edit_text_design"
+                        android:layout_below="@+id/lbl_room_count"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_check_person"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/side_button_height"
+                    android:layout_weight="1"
+                    android:id="@+id/btn_search"
+                    android:textSize="@dimen/text_regular"
+                    android:textColor="@color/color_bg"
+                    android:textStyle="bold"
+                    android:background="@drawable/primary_button_design"
+                    android:text="@string/lbl_search_now"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/side_button_height"
+                    android:layout_weight="4"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:paddingLeft="@dimen/margin_medium_3"
+                    android:background="@drawable/primary_button_design"
+                    android:drawableStart="@drawable/ic_map_black_24dp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lbl_top_search"
+            android:layout_below="@+id/layout_input"
+            android:text="@string/lbl_top_searches"
+            android:textSize="@dimen/text_small"
+            android:textColor="@color/color_dark"
+            android:layout_marginLeft="@dimen/margin_medium_3"
+            android:layout_marginTop="@dimen/margin_medium"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_top_searches"
+            android:layout_below="@id/lbl_top_search"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lbl_recent_search"
+            android:layout_below="@+id/rv_top_searches"
+            android:text="@string/lbl_recent_searches"
+            android:textSize="@dimen/text_small"
+            android:textColor="@color/color_dark"
+            android:layout_marginLeft="@dimen/margin_medium_3"
+            android:layout_marginTop="@dimen/margin_medium_3"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_recent_searches"
+            android:layout_below="@id/lbl_recent_search"/>
+
+    </RelativeLayout>
+
+</ScrollView>

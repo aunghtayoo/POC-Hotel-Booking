@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        android:id="@+id/blur_img"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/cv_corner_radius"
+        app:cardElevation="@dimen/cv_elevation"
+        android:elevation="@dimen/cv_elevation">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_medium_3">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_title">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lbl_cancel"
+                    android:text="@string/lbl_cancel"
+                    android:textStyle="bold"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:textColor="@color/color_primary" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lbl_filter_title"
+                    android:text="@string/title_filter"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/text_heading_1x"
+                    android:textColor="@color/color_dark" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lbl_Reset"
+                    android:text="@string/lbl_reset"
+                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:textColor="@color/color_primary" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lbl_store_by"
+                android:textSize="@dimen/text_small"
+                android:text="@string/lbl_sort_by"
+                android:textStyle="bold"
+                android:textColor="@color/color_dark"
+                android:layout_below="@id/layout_title"
+                android:layout_marginTop="@dimen/margin_large"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/side_button_height"
+                android:id="@+id/spinner_layout"
+                android:layout_below="@+id/lbl_store_by"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/edit_text_design">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_price"
+                    android:textColor="@color/color_dark"
+                    android:textSize="@dimen/text_regular"
+                    android:layout_marginLeft="@dimen/margin_medium_2"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/lbl_price_spinner"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner_sort_criteria"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_toEndOf="@+id/lbl_price_spinner"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:entries="@array/array_prices"/>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lbl_rating"
+                android:textSize="@dimen/text_small"
+                android:text="@string/lbl_rating"
+                android:textStyle="bold"
+                android:textColor="@color/color_dark"
+                android:layout_below="@id/spinner_layout"
+                android:layout_marginTop="@dimen/margin_large"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:weightSum="6"
+                android:gravity="center"
+                android:layout_below="@id/lbl_rating"
+                android:id="@+id/layout_rating">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/rating_height"
+                    android:layout_margin="@dimen/margin_small"
+                    android:text="none"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_pale"
+                    android:background="@drawable/rating_button_design"
+                    android:textSize="@dimen/text_smaller"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/rating_height"
+                    android:layout_margin="@dimen/margin_small"
+                    android:text="1"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_pale"
+                    android:drawableRight="@drawable/ic_star_black_24dp_rating"
+                    android:paddingRight="@dimen/margin_medium"
+                    android:paddingLeft="@dimen/margin_medium"
+                    android:background="@drawable/rating_button_design"
+                    android:textSize="@dimen/text_regular"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/rating_height"
+                    android:layout_margin="@dimen/margin_small"
+                    android:text="2"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_pale"
+                    android:drawableRight="@drawable/ic_star_black_24dp_rating"
+                    android:paddingRight="@dimen/margin_medium"
+                    android:paddingLeft="@dimen/margin_medium"
+                    android:background="@drawable/rating_button_design"
+                    android:textSize="@dimen/text_regular"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/rating_height"
+                    android:layout_margin="@dimen/margin_small"
+                    android:text="3"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_pale"
+                    android:drawableRight="@drawable/ic_star_black_24dp_rating"
+                    android:paddingRight="@dimen/margin_medium"
+                    android:paddingLeft="@dimen/margin_medium"
+                    android:background="@drawable/rating_button_design"
+                    android:textSize="@dimen/text_regular"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/rating_height"
+                    android:layout_margin="@dimen/margin_small"
+                    android:text="4"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_pale"
+                    android:drawableRight="@drawable/ic_star_black_24dp_rating"
+                    android:paddingRight="@dimen/margin_medium"
+                    android:paddingLeft="@dimen/margin_medium"
+                    android:background="@drawable/rating_button_design"
+                    android:textSize="@dimen/text_regular"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/rating_height"
+                    android:layout_margin="@dimen/margin_small"
+                    android:text="5"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_pale"
+                    android:drawableRight="@drawable/ic_star_black_24dp_rating"
+                    android:paddingRight="@dimen/margin_medium"
+                    android:paddingLeft="@dimen/margin_medium"
+                    android:background="@drawable/rating_button_design"
+                    android:textSize="@dimen/text_regular"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lbl_price_range"
+                android:textSize="@dimen/text_small"
+                android:text="@string/lbl_price_range"
+                android:textStyle="bold"
+                android:textColor="@color/color_dark"
+                android:layout_below="@id/layout_rating"
+                android:layout_marginTop="@dimen/margin_large"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:id="@+id/img_range"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bar_chart"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_below="@+id/lbl_price_range"/>
+
+            <android.support.v7.widget.AppCompatSeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="1000"
+                android:theme="@style/AppTheme"
+                android:layout_below="@+id/img_range"
+                android:layout_marginTop="@dimen/margin_medium_n"
+                android:id="@+id/seek_filter"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lbl_price"
+                android:text="@string/lbl_90_350"
+                android:textColor="@color/color_dark"
+                android:textSize="@dimen/text_regular"
+                android:layout_below="@+id/seek_filter"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="@dimen/margin_medium_2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lbl_price_avg"
+                android:text="@string/lbl_average_250"
+                android:textColor="@color/color_dark"
+                android:textSize="@dimen/text_regular"
+                android:layout_below="@+id/seek_filter"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/margin_medium_2"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_price_avg"
+                android:weightSum="5"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/side_button_height"
+                    android:layout_weight="1"
+                    android:id="@+id/btn_filter"
+                    android:textSize="@dimen/text_regular"
+                    android:textColor="@color/color_bg"
+                    android:textStyle="bold"
+                    android:background="@drawable/primary_button_design"
+                    android:text="@string/btn_filter"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/side_button_height"
+                    android:layout_weight="4"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:textColor="@color/color_bg"
+                    android:paddingLeft="@dimen/margin_medium_3"
+                    android:background="@drawable/primary_button_design"
+                    android:drawableStart="@drawable/ic_map_black_24dp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

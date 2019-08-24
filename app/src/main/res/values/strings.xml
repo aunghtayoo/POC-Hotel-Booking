@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">POCHotelBooking</string>
+    <string name="date_format">dd MMM, yyyy</string>
+    <string name="lbl_sort_by">SORT BY</string>
+    <string name="lbl_rating">RATING</string>
+    <string name="lbl_price_range">PRICE RANGE</string>
+    <string name="lbl_90_350">$90-$350</string>
+    <string name="lbl_average_250">Average-$250</string>
+    <string name="lbl_price">Price</string>
+    <string name="title_filter">Filter</string>
+    <string name="lbl_cancel">Cancel</string>
+    <string name="lbl_reset">Reset</string>
+    <string name="btn_filter">filter</string>
+    <string name="lbl_location">Location</string>
+    <string name="count_3">3</string>
+    <string name="lbl_explore">Explore</string>
+    <string name="chip_filters">Filters</string>
+    <string name="selected_dhaka">Dhaka</string>
+    <string name="lbl_check_in">Check in</string>
+    <string name="lbl_check_out">Check Out</string>
+    <string name="lbl_count">Count</string>
+    <string name="lbl_2_adults">2 Adults</string>
+    <string name="lbl_03">03</string>
+    <string name="lbl_search_now">search now</string>
+    <string name="lbl_top_searches">TOP SEARCHES</string>
+    <string name="lbl_recent_searches">RECENT SEARCHES</string>
+    <string name="lbl_rating_val">4.5</string>
+    <string name="lbl_rating_desc">( 21 ratings )</string>
+    <string name="hotel_name">The Westeen</string>
+    <string name="lbl_address">Gulshan Circle 2, Dhaka</string>
+    <string name="lbl_discount">GET 50% OFF</string>
+    <string name="lbl_facility">free wifi . Swimming</string>
+    <string name="lbl_pricing">$99/day</string>
+    <string name="lbl_rating_2">4.5</string>
+    <string name="lbl_21_ratings">( 21 ratings )</string>
+
+    <string-array name="array_locations">
+        <item>Dhaka</item>
+        <item>Delhi</item>
+        <item>Istanbul</item>
+    </string-array>
+
+    <string-array name="array_prices">
+        <item>$$>$$$</item>
+        <item>$90>$350</item>
+        <item>$100>$200</item>
+        <item>$50>$90</item>
+    </string-array>
+</resources>
